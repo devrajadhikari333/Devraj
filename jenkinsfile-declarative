@@ -6,10 +6,10 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh "sh script.sh" // lets hope it runs
+                sh "sh script.sh" 
             }
         }
-        stage('Notify'){
+        stage('Notify'){ 
             steps{
                 sh "echo this file runs succesfully"
             }

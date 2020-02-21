@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    environment{
+        project= "Test"
+    }
+    stages{
+        stage('Build'){
+            steps{
+                sh "sh script.sh" 
+            }
+        }
+        stage('Notify'){ 
+            steps{
+                sh "echo this file runs succesfully"
+            }
+        }
+    }
+    post{
+        success{
+            echo "success"
+            sh "mail to business person"
+        }
+        failure{
+            echo "failed"
+            sh "mail to business person about failure"
+        }
+        always{
+            deleteDir()
+        }
+    }
+}

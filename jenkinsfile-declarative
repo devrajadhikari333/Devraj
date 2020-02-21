@@ -1,0 +1,9 @@
+pipeline{
+    agent any
+    stages{
+        stage('checking-script')
+        steps{
+            sh "sh script.sh"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+node(){
+    stage('checkout'){
+        checkout scm
+    }
+    stage('Build'){
+        sh "sh variable.sh"
+    }
+    stage('Notify'){
+        sh " echo output should be hello World"
+    }
+}

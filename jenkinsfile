@@ -9,3 +9,14 @@ node(){
         sh " echo output should be hello World"
     }
 }
+post {
+    success {
+        echo "success"
+    }
+    failure {
+        echo "work hard"
+    }
+    always{
+        deletedi()
+    }
+}

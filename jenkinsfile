@@ -1,4 +1,4 @@
-node(Maven){
+node('Maven'){
     stage('checkout'){
         checkout scm
     }

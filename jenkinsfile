@@ -1,4 +1,4 @@
-node(){
+node(Agent){
     stage('checkout'){
         checkout scm
     }

@@ -1,0 +1,9 @@
+node(){
+    stage('git checkout'){
+        try {
+            sh " sh variable.sh"
+        }catch(err){
+            sh "echo error in checkout"
+        }
+    }
+}

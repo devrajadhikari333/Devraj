@@ -6,6 +6,7 @@ node(){
         withDockerRegistry(credentialsId: 'devraj-docker') {
             docker.image('devrajadhikari333/practice-devops123:tagname').inside(){
                 sh "httpd --version"
+                sh "echo it is working"
             }
         }
     }

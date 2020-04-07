@@ -3,11 +3,12 @@ node{
         checkout scm
     }
     stage('Build'){
-        withDockerRegistry(credentialsId: 'devraj-docker') {
-            docker.image('devrajadhikari333/practice-devops123:tagname').inside(){
-                sh "httpd --version"
-                sh "echo it is working"
-            }
+        try{
+            sh "docker --version"
+            sh "docker build -t httpd:v1 -f dockerfile ."
+            sh "docker run -p 8081:80 -d httpd:v1"
+        }catch(err){
+        sh "error occured"
         }
     }
 }

@@ -1,11 +1,15 @@
-node(){
-    stage('checkout'){
-        checkout scm
+pipeline {
+    agent {
+        docker {
+            image 'devrajadhikari333/practice-devops123:tagname'
+            label 'docker'
+        }
     }
-    stage('build'){
-        sh "sh script.sh"
-    }
-    stage('Notify'){
-        sh "echo this script will run successfully."
+    stages {
+        stage ('Build'){
+            steps{
+                sh "node --version"
+            }
+        }
     }
 }

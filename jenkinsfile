@@ -1,15 +1,10 @@
-pipeline {
-    agent {
-        docker {
-            label 'docker'
-            image 'devrajadhikari333/practice-devops123:tagname'
-        }
+node('docker'){
+    stage('checkout'){
+        checkoutscm
     }
-    stages {
-        stage ('Build'){
-            steps{
-                sh "node --version"
-            }
+    stage('Build'){
+        docker.image('devrajadhikari333/practice-devops123:tagname').inside(){
+            sh "node --version"
         }
     }
 }

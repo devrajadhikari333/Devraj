@@ -4,7 +4,7 @@ node{
     }
     stage('Build'){
         try{
-            sh "docker --version"
+            sh "docker version"
             sh "docker build -t httpd:v1 -f dockerfile ."
             sh "docker run -p 8081:80 -d httpd:v1"
         }catch(err){

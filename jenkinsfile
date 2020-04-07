@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'devrajadhikari333/practice-devops123:tagname'
             label 'docker'
+            image 'devrajadhikari333/practice-devops123:tagname'
         }
     }
     stages {

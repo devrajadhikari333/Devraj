@@ -1,6 +1,6 @@
 node('docker'){
     stage('checkout'){
-        checkoutscm
+        checkout scm
     }
     stage('Build'){
         docker.image('devrajadhikari333/practice-devops123:tagname').inside(){
